@@ -27,6 +27,6 @@ class PostDataLoader implements FixtureInterface
 
             $manager->persist($post);
         }
-        $manager->flush();
+        $manager->flush(); 
     }
 }

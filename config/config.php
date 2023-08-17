@@ -5,4 +5,4 @@ $dbParams = [
     'path' => __DIR__ . '/../data/blog.db'
 ];
 
-$dev = true;
+$dev = true; 
