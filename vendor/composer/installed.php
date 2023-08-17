@@ -3,7 +3,7 @@
         'name' => 'abdellah/doctrine',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'c04f352b199d49c41dd721adec0e0797e4b56539',
+        'reference' => 'e7b9495e3c6aaa26bd606615a1e8516d003b8811',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'abdellah/doctrine' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'c04f352b199d49c41dd721adec0e0797e4b56539',
+            'reference' => 'e7b9495e3c6aaa26bd606615a1e8516d003b8811',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -45,6 +45,15 @@
             'install_path' => __DIR__ . '/../doctrine/common',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'doctrine/data-fixtures' => array(
+            'pretty_version' => '1.6.6',
+            'version' => '1.6.6.0',
+            'reference' => '4af35dadbfcf4b00abb2a217c4c8c8800cf5fcf4',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../doctrine/data-fixtures',
+            'aliases' => array(),
+            'dev_requirement' => true,
         ),
         'doctrine/dbal' => array(
             'pretty_version' => '3.6.6',
