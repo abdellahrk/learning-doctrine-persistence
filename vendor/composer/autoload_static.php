@@ -48,13 +48,10 @@ class ComposerStaticInitf640100d4a45f29eed704c2436c0ad5a
             'Doctrine\\Deprecations\\' => 22,
             'Doctrine\\DBAL\\' => 14,
             'Doctrine\\Common\\Lexer\\' => 22,
+            'Doctrine\\Common\\DataFixtures\\' => 29,
             'Doctrine\\Common\\Collections\\' => 28,
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\' => 16,
-        ),
-        'A' => 
-        array (
-            'Abdellah\\Doctrine\\' => 18,
         ),
     );
 
@@ -147,6 +144,10 @@ class ComposerStaticInitf640100d4a45f29eed704c2436c0ad5a
         array (
             0 => __DIR__ . '/..' . '/doctrine/lexer/src',
         ),
+        'Doctrine\\Common\\DataFixtures\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/data-fixtures/src',
+        ),
         'Doctrine\\Common\\Collections\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/collections/src',
@@ -160,10 +161,10 @@ class ComposerStaticInitf640100d4a45f29eed704c2436c0ad5a
             0 => __DIR__ . '/..' . '/doctrine/common/src',
             1 => __DIR__ . '/..' . '/doctrine/event-manager/src',
         ),
-        'Abdellah\\Doctrine\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
+    );
+
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/../..' . '/src',
     );
 
     public static $classMap = array (
@@ -182,6 +183,7 @@ class ComposerStaticInitf640100d4a45f29eed704c2436c0ad5a
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitf640100d4a45f29eed704c2436c0ad5a::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitf640100d4a45f29eed704c2436c0ad5a::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInitf640100d4a45f29eed704c2436c0ad5a::$fallbackDirsPsr4;
             $loader->classMap = ComposerStaticInitf640100d4a45f29eed704c2436c0ad5a::$classMap;
 
         }, null, ClassLoader::class);
