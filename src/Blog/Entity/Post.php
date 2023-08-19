@@ -2,6 +2,7 @@
 
 namespace Blog\Entity;
 
+use Blog\Entity\Comment;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -13,13 +14,26 @@ class Post
     #[ORM\Column(type: Types::INTEGER)]
     #[ORM\GeneratedValue()]
     private $id;
+
     #[ORM\Column(type: Types::STRING)]
     private $title;
+
     #[ORM\Column(type: Types::STRING)]
     private $body;
+
     #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
     private $publishedAt;
 
+    #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'post')]
+    private $comments;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id.
@@ -101,5 +115,41 @@ class Post
     public function getPublishedAt()
     {
         return $this->publishedAt;
+    }
+
+    /**
+     * Add comment.
+     *
+     * @param \Blog\Entity\Comment $comment
+     *
+     * @return Post
+     */
+    public function addComment(\Blog\Entity\Comment $comment)
+    {
+        $this->comments[] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Remove comment.
+     *
+     * @param \Blog\Entity\Comment $comment
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeComment(\Blog\Entity\Comment $comment)
+    {
+        return $this->comments->removeElement($comment);
+    }
+
+    /**
+     * Get comments.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }
